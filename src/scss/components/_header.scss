@@ -1,19 +1,250 @@
 // header styles
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 20px;
-  z-index: 1;
+  padding: 10px 0;
+  z-index: 3;
+  background-color: $bgColor;
 
   &-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+  }
+
+  &-top {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    margin-left: 179px;
+    padding-left: 130px;
+    position: relative;
+    border-left: 1px solid $greyLight;
+  }
+
+  &-contacts {
+    color: $grey;
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    &__link {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 23px;
+
+        &::before {
+          content: "";
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background-color: currentColor;
+          position: absolute;
+          top: 8px;
+          right: -15px;
+        }
+      }
+    }
+  }
+
+  &-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 90px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    position: fixed;
+
+    img {
+      width: 29px;
+      height: 28px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+
+    &__login {
+      top: 25px;
+      right: 0;
+
+      &::before {
+        content: "";
+        width: 90px;
+        height: 100vh;
+        background-color: $white;
+        position: absolute;
+        top: -25px;
+        right: 0;
+        z-index: -1;
+      }
+    }
+
+    &__cart {
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+    }
+
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 60px;
+    margin: 0 -8px;
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+
+    &__item {
+      padding: 5px;
+      line-height: 1em;
+    }
+
+    &__link {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.header_home {
+  position: absolute;
+  background-color: transparent;
+  height: 90vh;
+
+  .logo {
+    width: 155px;
+  }
+
+  .header-row {
+    height: 90vh;
+  }
+
+  .header-top {
+    position: absolute;
+    top: 23%;
+  }
+
+  .header__content {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    border: 0;
+  }
+
+  .header-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav-menu {
+    text-align: left;
+    display: block;
+    column-count: 2;
+    margin-top: 200px;
+  }
+
+  .nav-menu__link {
+    @include rh(1024) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .header-social__item {
+    position: relative;
+  }
+
+  .nav-menu__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      background-color: $textColor;
+    }
+
+  }
+
+  .container {
+    max-width: 1330px;
+  }
+}
+
+.nav {
+  color: $textColor;
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+
+    &__item {
+      position: relative;
+      transition: color $hover-duration $timing;
+
+      &:before,
+      &::after {
+        content: "";
+        width: 1px;
+        position: absolute;
+        left: 0;
+        transform: translate(0, -50%);
+      }
+
+      &::before {
+        top: 50%;
+        background-color: $bgColor3;
+        height: 16px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      @include rh(1024) {
+        &:hover {
+          .nav-menu__link::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &__link {
+      padding: 0 10px;
+      position: relative;
+      transition: color $hover-duration $timing;
+
+      &::before {
+        content: "";
+        width: 0;
+        background-color: $bgColor3;
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 0;
+        z-index: -1;
+        transition: width $hover-duration $timing;
+      }
+    }
   }
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 155px;
 }

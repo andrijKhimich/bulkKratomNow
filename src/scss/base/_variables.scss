@@ -1,9 +1,19 @@
 // project colors
 $white: #ffffff;
 $black: #000000;
-$textColor: $black;
-$primary: #ff0000;
+$textColor: #464646;
+$primary: #8CC63F;
+$primaryLight: #CEF39C;
+$primaryDark: #006837;
+$grey: #828282;
+$greyLight: #E1E1E1;
+$bgColor: #F6F6F6;
+$bgColor2: #D7E5ED;
+$bgColor3: #ECF0F2;
+$bgBody: #F6F6F6;
+
+
 // timing
-$hover-duration: .4s;
+$hover-duration: .3s;
 $duration: .8s;
-$timing: cubic-bezier(.7, 0, .3, 1);
+$timing: ease-out;

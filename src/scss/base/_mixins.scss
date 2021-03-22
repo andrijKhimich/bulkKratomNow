@@ -52,6 +52,7 @@
 
 //retina
 @mixin retina {
+
   @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-device-pixel-ratio: 2) {
     @content;
@@ -132,4 +133,8 @@
 
 @mixin timing {
   transition: .3s;
+}
+
+@mixin gradient {
+  background: linear-gradient(135deg, #ECF0F2 0%, #D7E5ED 100%);
 }

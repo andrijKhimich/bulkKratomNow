@@ -41,30 +41,24 @@
   transition: transform .8s cubic-bezier(0.6, 0, 0.41, 1), opacity .8s cubic-bezier(0.6, 0, 0.41, 1);
 }
 
-.js-fadeIn {
-  opacity: 0;
-}
-
-.js-slideRight {
-  opacity: 0;
-  transform: translate(50px, 0);
-}
-
-.js-slideLeft {
-  opacity: 0;
-  transform: translate(-50px, 0);
-}
-
 .js-show-onload {
   transform: translate(0, 0) rotate(0);
   opacity: 1;
   transition: transform .8s cubic-bezier(0.6, 0, 0.41, 1), opacity .8s cubic-bezier(0.6, 0, 0.41, 1);
 }
 
-.show-words {
-  opacity: 1;
-  transform: matrix(1, 0, 0, 1, 0, 0);
-  transition: opacity $duration $timing, transform $duration $timing;
+.js-fadeIn {
+  opacity: 0;
+}
+
+.js-slideRight {
+  opacity: 0;
+  transform: translate(20px, 0);
+}
+
+.js-slideLeft {
+  opacity: 0;
+  transform: translate(-20px, 0);
 }
 
 .hide-content {
@@ -73,5 +67,43 @@
 
 .js-slideTop {
   opacity: 0;
-  transform: translate(0, 50px);
+  transform: translate(0, 20px);
+}
+
+.js-slideDown {
+  opacity: 0;
+  transform: translate(0, -20px);
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: right, top;
+
+  }
+
+  100% {
+    background-position: left, bottom;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg) translate(-96px) rotate(0deg);
+
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-96px) rotate(-360deg);
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    transform: rotate(0deg) translate(96px) rotate(0deg);
+
+  }
+
+  100% {
+    transform: rotate(-360deg) translate(96px) rotate(360deg);
+  }
 }
