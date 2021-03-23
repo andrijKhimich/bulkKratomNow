@@ -40,6 +40,10 @@ body {
   }
 }
 
+.fixed {
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -253,25 +257,25 @@ input {
 
   &::-webkit-input-placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 12px;
     color: $textColor;
   }
 
   &::-moz-placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 12px;
     color: $black;
   }
 
   &:-ms-input-placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 12px;
     color: $black;
   }
 
   &::placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 12px;
     color: $black;
   }
 }
@@ -313,8 +317,7 @@ textarea {
     }
 
     @include d(575) {
-      top: auto;
-      bottom: 140px;
+      top: -20px;
     }
   }
 
@@ -324,6 +327,13 @@ textarea {
 
     @include d(991) {
       top: 320px;
+    }
+
+    @include d(767) {
+      left: -20px;
+      top: auto;
+      bottom: 80px;
+      width: 60px;
     }
   }
 
@@ -345,6 +355,10 @@ textarea {
       top: -70px;
       width: 80px;
     }
+
+    @include d(575) {
+      top: -10px;
+    }
   }
 
   &_5 {
@@ -359,6 +373,10 @@ textarea {
     @include d(991) {
       right: auto;
       left: 30px;
+    }
+
+    @include d(575) {
+      display: none;
     }
   }
 
@@ -413,6 +431,7 @@ textarea {
   top: 40%;
   left: 0;
   transform: translate(0, -50%);
+  z-index: 9;
 
   @include d(1920) {
     top: 45%;
@@ -455,6 +474,17 @@ textarea {
       }
     }
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
 }
 
 .section-title {
@@ -565,6 +595,150 @@ textarea {
         background-color: $primary;
         color: $white;
       }
+    }
+  }
+}
+
+.login-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 90px;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  white-space: nowrap;
+
+  img,
+  picture {
+    flex: 0 0 20px;
+    max-width: 20px;
+    margin-right: 15px;
+  }
+}
+
+.login-form {
+  .btn {
+    width: 100%;
+    margin-top: 40px;
+
+    @include d(767) {
+      margin-top: 20px;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    margin: 15px 0;
+  }
+}
+
+.form {
+  &-box {
+    position: relative;
+    margin-bottom: 17px;
+  }
+
+  p {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  &-input {
+    width: 100%;
+    border-radius: 5px;
+    width: 360px;
+    height: 60px;
+    line-height: 60px;
+    padding: 20px 15px;
+    border: 1px solid $blue;
+
+    @include d(1300) {
+      height: 50px;
+      line-height: 50px;
+      padding: 0 15px;
+      width: 100%;
+    }
+  }
+
+  &-checkbox:checked~.form-check {
+    background-color: $blue;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &-check {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $blue;
+    display: block;
+    position: relative;
+    margin-right: 14px;
+    background-color: transparent;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 12px;
+      background-image: url(../img/check.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    p {
+      margin: 10px 0;
+      font-weight: 700;
+    }
+  }
+}
+
+.checkbox {
+  &-label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+}
+
+.lost-link {
+  font-size: 12px;
+  color: $blue;
+  display: block;
+  margin-top: -7px;
+  margin-bottom: 20px;
+}
+
+.google-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  justify-content: flex-start;
+
+  @include d(767) {
+    font-size: 14px;
+  }
+
+  img,
+  picture {
+    flex: 0 0 50px;
+    margin-right: 30px;
+
+    @include d(767) {
+      flex: 0 0 30px;
+      margin-right: 10px;
     }
   }
 }

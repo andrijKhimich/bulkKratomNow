@@ -437,6 +437,10 @@
     padding: 40px 0 80px;
   }
 
+  @include d(767) {
+    padding: 20px 0;
+  }
+
   &__title {
     margin-bottom: 80px;
 
