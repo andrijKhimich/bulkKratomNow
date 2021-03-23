@@ -1,13 +1,15 @@
-const humburger = $(".js-humburger");
-const headerMenu = $(".menu");
+const humburger = $(".js-burger");
+const headerMenu = $(".header-row");
 const scrollBtn = $(".scroll-btn");
 const header = $(".header");
 const logoImg = $(".logo img");
 const mainWrapper = $('.main-wrapper');
+const disclaimerBtn = $('.disclaimer-link');
+
 
 
 function setFixedHeader() {
-  header.removeClass("header_home js-show-onload js-show");
+  header.removeClass("header_home js-show-onload js-show js-slideDown");
 }
 
 function setHomeHeader() {
@@ -36,13 +38,13 @@ function showOnScroll(scrollValue) {
 }
 
 function openMenu() {
-  humburger.addClass('open');
-  headerMenu.addClass('open');
+  humburger.addClass('active');
+  headerMenu.addClass('active');
 }
 
 function closeMenu() {
-  humburger.removeClass('open');
-  headerMenu.removeClass('open');
+  humburger.removeClass('active');
+  headerMenu.removeClass('active');
 }
 
 function showContent() {
@@ -56,6 +58,7 @@ function showContent() {
 }
 
 $(document).ready(function () {
+
   if ($('.inner-page').length > 0) {
     setFixedHeader();
   } else {
@@ -64,14 +67,23 @@ $(document).ready(function () {
   showContent();
 
 
+  disclaimerBtn.click(function (e) {
+    e.preventDefault();
+    $('.disclaimer').fadeIn();
+  });
 
-  // humburger.click(function () {
-  //   if ($(this).hasClass('open')) {
-  //     closeMenu();
-  //   } else {
-  //     openMenu();
-  //   }
-  // });
+  // if ($(window).width() < 991) {
+  //   console.log('start');
+  //   // header.removeClass('heade_home');
+  //   setFixedHeader();
+  // }
+  humburger.click(function () {
+    if ($(this).hasClass('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
   $(window).on('mousemove', function (e) {
     var w = $(window).width();
@@ -90,6 +102,24 @@ $(document).ready(function () {
       });
     });
   });
+
+
+  showOnScroll($(window).scrollTop());
+  setHomeFixedHeader($(window).scrollTop());
+
+  if ($(window).width() <= 991) {
+    header.removeClass("header_home js-show-onload js-show js-slideDown");
+  } else {
+    setHomeHeader();
+  }
+
+  $(window).resize(function () {
+    if ($(window).width() <= 991) {
+      header.removeClass("header_home js-show-onload js-show js-slideDown");
+    } else {
+      setHomeHeader();
+    }
+  });
 });
 
 // slow scroll to id
@@ -102,13 +132,17 @@ $(document).ready(function () {
 //     }, 1000);
 //   });
 
-showOnScroll($(window).scrollTop());
-setHomeFixedHeader($(window).scrollTop());
+
+
 $(window).scroll(function () {
   const scrollValue = $(this).scrollTop();
   showOnScroll(scrollValue);
+
   scrollValue >= 1 ? closeMenu() : null;
-  setHomeFixedHeader(scrollValue);
+  if ($(window).width() > 991) {
+    setHomeFixedHeader(scrollValue);
+  }
+
 
   // let windowPos = $(window).scrollTop() + $(window).height() / 1.2;
   // console.log(windowPos)

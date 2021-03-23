@@ -8,15 +8,70 @@
   z-index: 3;
   background-color: $bgColor;
 
+  @include d(991) {
+    padding: 0;
+    position: absolute;
+  }
+
   &-row {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @include d(991) {
+      flex-direction: column;
+    }
+
+    &.active {
+      .logo {
+        // top: 5px;
+        bottom: 10px;
+        width: 105px;
+        // transform: translate(-50%, 0);
+        background-color: transparent;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .header-top {
+        height: 72px;
+      }
+
+      .header__content {
+        pointer-events: initial;
+        left: 0;
+        opacity: 1;
+      }
+    }
   }
 
   &-top {
     position: relative;
     z-index: 1;
+
+    @include d(991) {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      // flex-wrap: wrap;
+      padding-top: 15px;
+      z-index: 3;
+      height: 128px;
+      transition: height $hover-duration $timing;
+
+      &::before {
+        content: "";
+        width: 100vw;
+        height: 72px;
+        background-color: $bgBody;
+        position: absolute;
+        top: 0;
+        left: -15px;
+      }
+    }
   }
 
   &__content {
@@ -24,6 +79,30 @@
     padding-left: 130px;
     position: relative;
     border-left: 1px solid $greyLight;
+
+    @include d(1199) {
+      margin-left: 20px;
+      padding-left: 40px;
+      position: relative;
+    }
+
+    @include d(991) {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      padding-left: 44px;
+      padding-top: 75px;
+      margin-left: 0;
+      background-color: #fff;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      pointer-events: none;
+      left: -20px;
+      opacity: 0;
+      transition: opacity $hover-duration $timing, left $hover-duration $timing;
+    }
   }
 
   &-contacts {
@@ -31,8 +110,21 @@
     font-size: 12px;
     margin-bottom: 10px;
 
+    @include d(991) {
+      order: 3;
+      display: inline-flex;
+      flex-direction: column-reverse;
+    }
+
     &__link {
       position: relative;
+
+      @include d(991) {
+        font-size: 14px;
+        color: $black;
+        margin-bottom: 15px;
+        text-decoration: underline;
+      }
 
       &:not(:last-child) {
         margin-right: 23px;
@@ -46,6 +138,10 @@
           position: absolute;
           top: 8px;
           right: -15px;
+
+          @include d(991) {
+            display: none;
+          }
         }
       }
     }
@@ -61,16 +157,71 @@
     text-align: center;
     position: fixed;
 
+    @include d(1500) {
+      width: 70px;
+    }
+
+    @include d(1024) {
+      width: 40px;
+    }
+
+    @include d(991) {
+      position: static;
+      font-size: 14px;
+    }
+
     img {
       width: 29px;
       height: 28px;
       margin: 0 auto;
       margin-bottom: 5px;
+
+      @include d(1500) {
+        width: 22px;
+      }
     }
 
     &__login {
       top: 25px;
       right: 0;
+
+      @include d(991) {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        width: auto;
+        align-items: center;
+        position: relative;
+        top: 0;
+        padding: 7px 0;
+        margin-bottom: 20px;
+
+        &::after,
+        &::before {
+          content: "";
+          width: 100vw;
+          height: 1px;
+          background-color: $bgColor2;
+          position: absolute;
+          left: -44px;
+        }
+
+        &::before {
+          top: -3px;
+          right: auto;
+        }
+
+        &::after {
+          bottom: 3px;
+        }
+
+        img {
+          margin-right: 10px;
+        }
+
+        span {
+          white-space: nowrap;
+        }
+      }
 
       &::before {
         content: "";
@@ -81,6 +232,18 @@
         top: -25px;
         right: 0;
         z-index: -1;
+
+        @include d(1500) {
+          width: 70px;
+        }
+
+        @include d(1024) {
+          width: 40px;
+        }
+
+        @include d(991) {
+          // display: none;
+        }
       }
     }
 
@@ -88,6 +251,12 @@
       top: 50%;
       right: 0;
       transform: translate(0, -50%);
+
+      @include d(991) {
+        transform: translate(0, 0);
+        margin-right: 0;
+        margin-left: auto;
+      }
     }
 
   }
@@ -102,6 +271,25 @@
     position: fixed;
     bottom: 25px;
     right: 20px;
+
+    @include d(1500) {
+      right: 12px;
+    }
+
+    @include d(1024) {
+      flex-direction: column;
+      width: 40px;
+      right: 10px;
+      // bottom: 0;
+    }
+
+    @include d(991) {
+      position: static;
+      order: 2;
+      flex-direction: row;
+      width: auto;
+      margin-bottom: 20px;
+    }
 
     &__item {
       padding: 5px;
@@ -120,17 +308,37 @@
   background-color: transparent;
   height: 90vh;
 
+  @include d(1199) {
+    height: 80vh;
+  }
+
+  @include d(991) {
+    height: auto;
+  }
+
   .logo {
     width: 155px;
   }
 
   .header-row {
     height: 90vh;
+
+    @include d(1199) {
+      height: 80vh;
+    }
+
+    @include d(991) {
+      height: auto;
+    }
   }
 
   .header-top {
     position: absolute;
     top: 23%;
+
+    @include d(1600) {
+      top: 19%;
+    }
   }
 
   .header__content {
@@ -138,6 +346,10 @@
     top: 20px;
     right: 0;
     border: 0;
+
+    @include d(1500) {
+      right: 80px;
+    }
   }
 
   .header-contacts {
@@ -177,21 +389,50 @@
     &::before {
       background-color: $textColor;
     }
-
   }
 
   .container {
     max-width: 1330px;
+
+    @include d(1440) {
+      max-width: 1230px;
+    }
+
+    @include d(1280) {
+      max-width: 1140px;
+    }
   }
 }
 
 .nav {
   color: $textColor;
 
+  @include d(991) {
+    order: 1;
+    width: 160px;
+  }
+
   &-menu {
     display: flex;
     align-items: center;
     margin-left: -10px;
+
+    @include d(991) {
+      display: block;
+      position: relative;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+
+      &::before {
+        content: "";
+        width: 100vw;
+        height: 1px;
+        background-color: $bgColor2;
+        position: absolute;
+        bottom: 0;
+        left: -44px;
+      }
+    }
 
     &__item {
       position: relative;
@@ -214,6 +455,11 @@
 
       &:not(:last-child) {
         margin-right: 15px;
+
+        @include d(991) {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
       }
 
       @include rh(1024) {
@@ -221,6 +467,12 @@
           .nav-menu__link::before {
             width: 100%;
           }
+        }
+      }
+
+      &.active {
+        .nav-menu__link::before {
+          width: 100%;
         }
       }
     }
@@ -246,5 +498,111 @@
 }
 
 .logo {
+  // width: 100%;
   max-width: 155px;
+
+  @include d(991) {
+    max-width: 100%;
+    width: 100%;
+    order: 1;
+    padding: 6px 0;
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    // margin-top: 24px;
+    transform: translate(-50%, 0);
+    transition: all $hover-duration $timing;
+
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 100%;
+      background-color: $white;
+      position: absolute;
+      left: -15px;
+      top: 0;
+      z-index: -1;
+      opacity: 1;
+      transition: opacity $hover-duration $timing;
+    }
+
+    img {
+      width: 105px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.burger {
+  margin-top: 3px;
+  width: 30px;
+  height: 21px;
+  position: relative;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  display: none;
+
+  @include d(991) {
+    display: inline-block;
+
+    &.active {
+      span {
+
+        &:first-child,
+        &:last-child {
+          width: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 100%;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $textColor;
+    transition: width $hover-duration $timing, transform $hover-duration $timing;
+
+    &:first-child {
+      top: 0;
+      left: 0;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    &:nth-child(2) {
+      width: 20px;
+      left: 0;
+    }
+
+    &:nth-child(3) {
+      width: 7px;
+      right: 0;
+      background-color: $primary;
+    }
+
+    &:last-child {
+      left: 0;
+      bottom: 0;
+    }
+  }
 }

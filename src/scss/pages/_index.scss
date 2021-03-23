@@ -2,6 +2,15 @@
   height: 90vh;
   width: 100vw;
 
+  @include d(1199) {
+    height: 80vh;
+  }
+
+  @include d(991) {
+    height: auto;
+    padding-bottom: 60px;
+  }
+
   &-banner {
     width: 1232px;
     width: 64vw;
@@ -10,6 +19,17 @@
     left: 20%;
     // transform: translate(-50%, 0);
     z-index: 1;
+
+    @include d(1199) {
+      bottom: 0;
+      top: auto;
+    }
+
+    @include d(991) {
+      position: static;
+      width: 90vw;
+      margin: 0 auto;
+    }
 
     &::after {
       content: "";
@@ -23,6 +43,14 @@
       background-position: top right;
       animation: bg-animation 10s ease infinite alternate;
       background-size: 300%;
+
+      @include d(1199) {
+        height: 200%;
+      }
+
+      @include d(991) {
+        left: -10vw;
+      }
     }
   }
 }
@@ -30,8 +58,16 @@
 .collection {
   padding: 20px 0 80px 0;
 
+  @include d(1500) {
+    padding: 0 0 40px 0;
+  }
+
   &__content {
     position: relative;
+
+    @include d(991) {
+      display: none;
+    }
   }
 
   &__row {
@@ -45,10 +81,28 @@
   &__col {
     padding: 0 15px;
     margin-bottom: 30px;
+
+    @include d(1199) {
+      flex: 0 0 33.3333%;
+    }
+
+    @include d(991) {
+      margin-bottom: 0;
+    }
+
+    @include d(575) {
+      flex: 0 0 50%;
+
+    }
   }
 
   &__filter {
     max-width: 690px;
+
+    @include d(991) {
+      margin: 0 auto;
+
+    }
   }
 }
 
@@ -105,6 +159,28 @@
   width: 100%;
   margin-bottom: 36px;
 
+  @include d(991) {
+    margin-bottom: 116px;
+    overflow-x: scroll;
+
+    //style default scrollbar
+    &::-webkit-scrollbar {
+      height: 2px;
+      background-color: $white;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px $white;
+      box-shadow: inset 0 0 4px $white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary;
+      outline: 1px solid $primary;
+      transition: background-color 0.4s ease;
+    }
+  }
+
   &__item {
     width: 100%;
     text-align: center;
@@ -116,6 +192,11 @@
     border-bottom: 1px solid $bgColor2;
     width: 100%;
     position: relative;
+
+    @include d(991) {
+      min-width: 110px;
+      width: auto;
+    }
 
     @include rh(1024) {
       &:hover {
@@ -161,6 +242,17 @@
   position: relative;
   transition: background-color $hover-duration $timing;
 
+  @include d(1199) {
+    width: 100%;
+    flex: 0 0 100%;
+    padding: 10px 20px;
+  }
+
+  @include d(991) {
+    margin-bottom: 70px;
+    overflow: visible;
+    height: auto;
+  }
 
   &::before,
   &::after {
@@ -213,10 +305,34 @@
     opacity: 0;
     mix-blend-mode: color-burn;
     transition: opacity $hover-duration $timing;
+
+    @include d(991) {
+      display: none;
+    }
   }
 
   p {
     position: relative;
+
+    @include d(991) {
+      padding-top: 40px;
+    }
+  }
+
+  &__img,
+  picture {
+    display: none;
+
+    @include d(991) {
+      display: block;
+      max-width: 143px;
+      margin: 0 auto;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 143px;
+    }
   }
 }
 
@@ -232,6 +348,11 @@
   width: max-content;
   margin-top: 30px;
 
+  @include d(991) {
+    margin-top: 0;
+    font-size: 16px;
+  }
+
   &::before {
     content: "";
     width: 100%;
@@ -242,6 +363,10 @@
     background-color: currentColor;
     opacity: 0;
     transition: bottom $hover-duration $timing, opacity $hover-duration $timing;
+
+    @include d(991) {
+      opacity: 1;
+    }
   }
 
   @include rh(1024) {
@@ -257,6 +382,18 @@
 .best {
   padding: 40px 0 200px;
 
+  @include d(1500) {
+    padding: 40px 0 160px;
+  }
+
+  @include d(1199) {
+    padding: 40px 0 100px;
+  }
+
+  @include d(991) {
+    padding: 20px 0;
+  }
+
   &__title {
     margin-bottom: 90px;
   }
@@ -265,9 +402,22 @@
     max-width: 360px;
     position: relative;
 
+    @include d(1199) {
+      max-width: 290px;
+    }
+
+    @include d(991) {
+      margin: 0 auto 80px auto;
+    }
+
     &__img {
       width: 360px;
       height: 360px;
+
+      @include d(1199) {
+        width: 290px;
+        height: 290px;
+      }
     }
 
     &__footer {
@@ -283,12 +433,28 @@
 .about {
   padding: 40px 0 160px;
 
+  @include d(1500) {
+    padding: 40px 0 80px;
+  }
+
   &__title {
     margin-bottom: 80px;
+
+    @include d(1280) {
+      margin-bottom: 60px;
+    }
+
+    @include d(991) {
+      margin-bottom: 40px;
+    }
   }
 
   &__row {
     position: relative;
+
+    @include d(767) {
+      margin: 0 -15px;
+    }
   }
 
   &__content {
@@ -297,16 +463,42 @@
     top: 60px;
     right: -168px;
     z-index: 1;
+
+    @include d(1500) {
+      right: -60px;
+      max-width: 640px;
+    }
+
+    @include d(1366) {
+      right: 0;
+    }
+
   }
 
   &__img {
     max-width: 660px;
+
+    @include d(1500) {
+      max-width: 580px;
+    }
+
+
   }
 }
 
 .section-content {
   padding: 43px 148px 60px 58px;
   z-index: 1;
+
+  @include d(1500) {
+    padding: 40px 120px 50px 48px;
+  }
+
+  @include d(767) {
+    position: static;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
 
   &::before {
     content: "";
@@ -320,13 +512,17 @@
     mask: url(../img/shape2.svg) right / cover;
     -webkit-mask-repeat: no-repeat;
     background-color: $white;
+
+    @include d(767) {
+      display: none;
+    }
   }
 
   .title-5,
   & h5 {
     color: $black;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   p {
@@ -338,17 +534,36 @@
   border-radius: 10px;
   width: 100%;
   overflow: hidden;
+
+  @include d(767) {
+    border-radius: 0;
+    max-width: calc(100% + 30px);
+  }
 }
 
 .kraton {
   padding: 40px 0 180px;
 
+  @include d(1500) {
+    padding: 40px 0 40px;
+  }
+
   &__title {
     margin-bottom: 50px;
+
+    @include d(767) {
+      margin-bottom: 10px;
+    }
   }
 
   &__row {
     position: relative;
+
+    @include d(767) {
+      margin: 0 -15px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   &__content {
@@ -357,6 +572,12 @@
     top: 60px;
     left: -60px;
     z-index: 1;
+
+    @include d(1500) {
+      left: 0;
+      max-width: 620px;
+    }
+
   }
 
   &__img {
@@ -365,14 +586,43 @@
     margin-left: auto;
     position: relative;
     right: -60px;
+
+    @include d(1500) {
+      max-width: 630px;
+    }
+
+    @include d(1366) {
+      right: 0;
+      max-width: 580px;
+    }
+
+    // @include d(767) {
+    //   order: 0;
+    // }
   }
 }
 
 .shipping {
   padding: 20px 0 130px;
 
+  @include d(1199) {
+    padding: 20px 0 80px 0;
+  }
+
+  @include d(575) {
+    padding: 20px 0 20px 0;
+  }
+
   &__title {
     margin-bottom: 80px;
+
+    @include d(1280) {
+      margin-bottom: 60px;
+    }
+
+    @include d(991) {
+      margin-bottom: 40px;
+    }
   }
 
   &__mark {
@@ -381,6 +631,10 @@
     border-radius: 10px;
     color: $white;
     position: relative;
+
+    @include d(991) {
+      margin: 0 auto 80px auto;
+    }
 
     &::before {
       content: "";
@@ -457,6 +711,11 @@
   &__content {
     margin-left: 40px;
     margin-top: 30px;
+
+    @include d(991) {
+      margin-left: 0;
+      margin-top: 0;
+    }
   }
 
   &__row {
@@ -489,6 +748,10 @@
     border-radius: 10px;
     background-color: $white;
 
+    @include d(767) {
+      margin-bottom: 20px;
+    }
+
     &__img {
       flex: 0 0 114px;
       height: 100%;
@@ -515,6 +778,10 @@
       padding-left: 15px;
       padding-right: 50px;
 
+      @include d(1199) {
+        padding-right: 20px;
+      }
+
       b {
         font-weight: 700;
         display: block;
@@ -539,6 +806,14 @@
     width: 150px;
     height: 100px;
     position: relative;
+
+    @include d(1199) {
+      width: 100%;
+    }
+
+    @include d(767) {
+      margin-bottom: 20px;
+    }
 
     img {
       position: absolute;

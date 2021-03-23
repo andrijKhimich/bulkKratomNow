@@ -54,6 +54,18 @@ h1 {
   font-size: 55px;
   line-height: 1.491em;
   font-family: 'Oswald', Arial, Helvetica, sans-serif;
+
+  @include d(1199) {
+    font-size: 50px;
+  }
+
+  @include d(767) {
+    font-size: 42px;
+  }
+
+  @include d(575) {
+    font-size: 32px;
+  }
 }
 
 h2 {
@@ -61,6 +73,18 @@ h2 {
   font-weight: 700;
   line-height: 1.5em;
   letter-spacing: 0.05em;
+
+  @include d(1199) {
+    font-size: 34px;
+  }
+
+  @include d(767) {
+    font-size: 30px;
+  }
+
+  @include d(575) {
+    font-size: 25px;
+  }
 }
 
 h3 {
@@ -259,6 +283,12 @@ textarea {
   height: 100%;
 }
 
+.main {
+  @include d(991) {
+    padding-top: 128px;
+  }
+}
+
 .main-wrapper {
   position: relative;
   overflow: hidden;
@@ -275,11 +305,26 @@ textarea {
   &_1 {
     top: 80px;
     left: 40px;
+
+    @include d(1440) {
+      top: 30px;
+      width: 100px;
+      left: -40px;
+    }
+
+    @include d(575) {
+      top: auto;
+      bottom: 140px;
+    }
   }
 
   &_2 {
     top: 160px;
     left: 500px;
+
+    @include d(991) {
+      top: 320px;
+    }
   }
 
   &_3 {
@@ -290,6 +335,16 @@ textarea {
   &_4 {
     top: 120px;
     right: 50px;
+
+    @include d(1440) {
+      right: 30px;
+    }
+
+    @include d(991) {
+      right: -20px;
+      top: -70px;
+      width: 80px;
+    }
   }
 
   &_5 {
@@ -300,11 +355,24 @@ textarea {
   &_6 {
     bottom: 365px;
     right: 240px;
+
+    @include d(991) {
+      right: auto;
+      left: 30px;
+    }
   }
 
   &_7 {
     top: 0;
     left: -30px;
+
+    @include d(1440) {
+      width: 160px;
+    }
+
+    @include d(991) {
+      display: none;
+    }
   }
 }
 
@@ -313,6 +381,28 @@ textarea {
   margin: 0 auto;
   padding: 0 15px;
   height: 100%;
+
+  @include d(1440) {
+    max-width: 1230px;
+  }
+
+  @include d(1280) {
+    max-width: 1140px;
+  }
+
+  @include d(1199) {
+    max-width: 960px;
+  }
+
+  @include d(991) {
+    max-width: 100%;
+  }
+}
+
+.container {
+  @include d(991) {
+    max-width: 100%;
+  }
 }
 
 .site-title {
@@ -323,12 +413,29 @@ textarea {
   top: 40%;
   left: 0;
   transform: translate(0, -50%);
+
+  @include d(1920) {
+    top: 45%;
+  }
+
+  @include d(991) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    text-align: center;
+    max-width: 100%;
+    padding-top: 0;
+  }
 }
 
 .subtitle {
   display: flex;
   color: $primary;
   font-size: 16px;
+
+  @include d(991) {
+    justify-content: center;
+  }
 
   &__item {
     position: relative;
@@ -356,12 +463,27 @@ textarea {
   padding-top: 70px;
   margin-bottom: 60px;
 
+  @include d(991) {
+    padding-top: 50px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  @include d(767) {
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  @include d(575) {
+    padding-top: 20px;
+  }
+
   &::before {
     content: attr(data-title);
     font-weight: 900;
     font-size: 70px;
-    line-height: 105px;
-    -webkit-text-stroke: 1px$primary;
+    line-height: 1.5em;
+    -webkit-text-stroke: 1px $primary;
     color: transparent;
     position: absolute;
     top: 0;
@@ -369,6 +491,20 @@ textarea {
     transform: translate(-50%, 0);
     width: 100%;
     opacity: .4;
+
+    @include d(991) {
+      font-size: 50px;
+      left: 0;
+      transform: translate(0, 0);
+    }
+
+    @include d(767) {
+      font-size: 30px;
+    }
+
+    @include d(575) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -385,6 +521,11 @@ textarea {
   padding: 14px 36px;
   white-space: nowrap;
   transition: background-color $hover-duration $timing, color $hover-duration $timing, border-color $hover-duration $timing;
+
+  @include d(1199) {
+    font-size: 16px;
+    padding: 10px 26px;
+  }
 
   &_primary {
     background-color: $primary;
@@ -414,6 +555,10 @@ textarea {
     border-color: $primary;
     color: $primary;
     padding: 14px 23px;
+
+    @include d(1199) {
+      padding: 10px 23px;
+    }
 
     @include rh(1024) {
       &:hover {
