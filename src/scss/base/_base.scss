@@ -725,7 +725,11 @@ textarea {
   display: inline-flex;
   align-items: center;
   font-size: 16px;
-  justify-content: flex-start;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid $bgColor2;
+  height: 60px;
+  width: 100%;
 
   @include d(767) {
     font-size: 14px;
@@ -733,12 +737,26 @@ textarea {
 
   img,
   picture {
-    flex: 0 0 50px;
+    flex: 0 0 30px;
     margin-right: 30px;
 
     @include d(767) {
       flex: 0 0 30px;
       margin-right: 10px;
     }
+  }
+}
+
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 12px;
+  color: $bgColor2;
+  img {
+    flex: 0 0 20px;
+    max-width: 20px;
+    margin-right: 5px;
   }
 }

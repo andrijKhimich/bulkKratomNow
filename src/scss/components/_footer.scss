@@ -206,16 +206,18 @@
 
     @include d(767) {
       padding-bottom: 0;
+
+      &::before {
+        content: "";
+        width: 100vw;
+        height: 1px;
+        background-color: $primary;
+        position: absolute;
+        left: -15px;
+      }
     }
 
-    &::before {
-      content: "";
-      width: 100vw;
-      height: 1px;
-      background-color: $primary;
-      position: absolute;
-      left: -15px;
-    }
+
 
     &::before {
       top: 0;

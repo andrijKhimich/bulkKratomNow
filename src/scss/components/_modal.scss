@@ -28,6 +28,7 @@
   top: 0;
   right: -100px;
   z-index: 10;
+  // overflow: hidden;
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
@@ -45,11 +46,13 @@
 
   @include d(575) {
     max-width: 100%;
+    padding: 33px 15px 20px 15px;
   }
 
   &-wrapper {
     height: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: auto;
   }
 
@@ -163,6 +166,12 @@
     }
   }
 
+  &__subheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &-product {
     background-color: #FAFAFA;
     border-radius: 10px;
@@ -255,6 +264,11 @@
     bottom: 0;
     left: 30px;
     right: 30px;
+
+    @include d(767) {
+      position: static;
+      margin-top: 10px;
+    }
   }
 
   &__shipping {
