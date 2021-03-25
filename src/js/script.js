@@ -15,6 +15,7 @@ function setHomeHeader() {
 }
 
 function setHomeFixedHeader(scrollValue) {
+  console.log('home');
   let headerStartPosition = $("#hero").height();
   let windowPos = $(window).scrollTop() + $(window).height() / 2.4;
   if (headerStartPosition < windowPos) {
@@ -57,11 +58,16 @@ function showContent() {
 
 $(document).ready(function () {
 
+
   if ($('.inner-page').length > 0) {
-    setFixedHeader();
-  } else {
-    setHomeHeader();
+    console.log('inner');
+    setTimeout(function () {
+      setFixedHeader();
+    }, 100);
   }
+
+
+
   showContent();
 
 
@@ -103,7 +109,11 @@ $(document).ready(function () {
 
 
   showOnScroll($(window).scrollTop());
-  setHomeFixedHeader($(window).scrollTop());
+
+  if ($('.home-page').length > 0) {
+    setHomeFixedHeader($(window).scrollTop());
+  }
+
 
   if ($(window).width() <= 991) {
     header.removeClass("header_home js-show-onload js-show js-slideDown");
@@ -112,11 +122,15 @@ $(document).ready(function () {
   }
 
   $(window).resize(function () {
-    if ($(window).width() <= 991) {
-      header.removeClass("header_home js-show-onload js-show js-slideDown");
-    } else {
-      setHomeHeader();
+
+    if ($('.home-page').length > 0) {
+      if ($(window).width() <= 991) {
+        header.removeClass("header_home js-show-onload js-show js-slideDown");
+      } else {
+        setHomeHeader();
+      }
     }
+
   });
 
 
@@ -159,9 +173,16 @@ $(window).scroll(function () {
   showOnScroll(scrollValue);
 
   scrollValue >= 1 ? closeMenu() : null;
-  if ($(window).width() > 991) {
+
+
+  // if ($(window).width() > 991) {
+  //   setHomeFixedHeader(scrollValue);
+  // }
+
+  if ($('.home-page').length > 0 && ($(window).width() > 991)) {
     setHomeFixedHeader(scrollValue);
   }
+
 
   // let windowPos = $(window).scrollTop() + $(window).height() / 1.2;
   // console.log(windowPos)

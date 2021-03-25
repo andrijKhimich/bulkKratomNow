@@ -754,9 +754,35 @@ textarea {
   white-space: nowrap;
   font-size: 12px;
   color: $bgColor2;
+
   img {
     flex: 0 0 20px;
     max-width: 20px;
     margin-right: 5px;
   }
+}
+
+.vawes {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 330px;
+  left: 0;
+}
+
+.vawe-mask {
+  position: absolute;
+  width: 100%;
+  top: 260px;
+  left: 0;
+  z-index: -1;
+}
+
+.road {
+  position: absolute;
+  left: 50%;
+  width: auto;
+  top: 330px;
+  height: 420px;
+  transform: translate(-50%, 0);
 }
