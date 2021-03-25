@@ -1,0 +1,77 @@
+.faq {
+  .leaf {
+    top: 400px;
+  }
+}
+
+
+.accordion {
+  margin-bottom: 100px;
+
+  @include d(1199) {
+    margin-bottom: 80px;
+  }
+
+  @include d(991) {
+    margin-bottom: 60px;
+  }
+
+  &-list {
+    position: relative;
+
+    li {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $grey;
+      }
+
+      .title-5,
+      & a {
+        color: $black;
+        padding: 20px 20px 20px 0;
+        position: relative;
+        display: block;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 1px;
+          height: 35px;
+          position: absolute;
+          top: 15px;
+          left: -20px;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+  &__content {
+    p {
+      padding-bottom: 10px;
+
+      @include d(991) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-arrow {
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: -60px;
+    top: 40%;
+    border-top: 1px solid $primary;
+    border-right: 1px solid $primary;
+    background-color: transparent;
+    transform: rotate(135deg);
+    transition: transform $hover-duration $timing;
+
+    &.active {
+      transform: rotate(315deg);
+    }
+
+  }
+}

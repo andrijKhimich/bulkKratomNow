@@ -164,6 +164,23 @@ $(document).ready(function () {
     $('.overlay').removeClass('active');
     $('body').removeClass('fixed');
   });
+
+
+  // FAQ page accordion
+  $('.accordion__content').hide();
+  $('.accordion-list li a').click(function (e) {
+    e.preventDefault();
+    if ($(this).hasClass('accordion_active')) {
+      $(this).removeClass("accordion_active").closest('.accordion-list li').find('.accordion__content').slideUp(200);
+      $(this).find('.accordion-arrow').removeClass('active');
+    } else {
+      $(this).addClass("accordion_active").closest('.accordion-list li').find('.accordion__content').slideDown(200);
+      $(this).parent().siblings('.accordion-list li').find('.accordion-list li a').removeClass("accordion_active");
+      $(this).parent().siblings('.accordion-list li').find('.accordion__content').slideUp(200);
+      $(this).find('.accordion-arrow').addClass('active');
+      $(this).parent().siblings('.accordion-list li').find('.accordion-arrow').removeClass('active');
+    }
+  });
 });
 
 // slow scroll to id
