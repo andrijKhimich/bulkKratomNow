@@ -1,0 +1,166 @@
+.blog {
+  &-card {
+    max-width: 360px;
+    margin-bottom: 40px;
+
+    @include d(1300) {
+      max-width: 320px;
+      margin-bottom: 20px;
+      margin: 0 auto 20px auto;
+    }
+
+    @include rh(1024) {
+      &:hover {
+        .read-more {
+          opacity: 1;
+          pointer-events: initial;
+        }
+
+        .blog-card__img {
+          border-color: $primary;
+        }
+      }
+    }
+
+    &__img {
+      border-radius: 10px;
+      width: 360px;
+      height: 360px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid transparent;
+      transition: border-color $hover-duration $timing;
+
+      @include d(1300) {
+        width: 320px;
+        height: 320px;
+      }
+
+      @include d(1199) {
+        width: 260px;
+        height: 260px;
+      }
+
+      @include d(820) {
+        width: 220px;
+        height: 220px;
+      }
+
+      @include d(767) {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__date {
+      color: $primary;
+      font-weight: 300;
+      font-size: 12px;
+      margin-bottom: 15px;
+
+      @include d(1199) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 15px;
+
+      @include d(1199) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__text {
+      margin-bottom: 15px;
+
+      @include d(1199) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .read-more {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $hover-duration $timing;
+    }
+  }
+
+  &-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    @include d(1199) {
+      margin-bottom: 60px;
+    }
+    @include d(991) {
+      margin-bottom: 20px;
+    }
+    .btn_grey {
+      margin-right: 30px;
+    }
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  @include d(1199) {
+    margin-bottom: 20px;
+  }
+}
+
+.grid-item {
+  width: 33.33333%;
+  padding-right: 30px;
+  padding-left: 30px;
+
+  @include d(1199) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @include d(767) {
+    width: 50%;
+  }
+
+  @include d(575) {
+    width: 100%;
+  }
+
+  &:nth-child(odd) {
+    margin-top: 80px;
+
+    @include d(1300) {
+      margin-top: 60px;
+    }
+
+    @include d(767) {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(6n-1) {
+    margin-top: -80px;
+
+    @include d(1300) {
+      margin-top: -60px;
+    }
+
+    @include d(767) {
+      margin-top: 0;
+    }
+  }
+}
+
+.filter__footer {
+  text-align: center;
+  margin-bottom: 100px;
+
+  .btn {
+    min-width: 300px;
+  }
+}

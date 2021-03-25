@@ -89,6 +89,7 @@ gulp.task("js", function () {
       // "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
       // "node_modules/jquery-nice-select/js/jquery.nice-select.min.js",
       // "src/libs/datepicker/dist/js/datepicker-full.min.js",
+      // "node_modules/masonry-layout/dist/masonry.pkgd.min.js",
       // 'src/libs/TweenMax.min.js',
       // 'src/libs/jquery-parallax.js',
       "src/js/script.js",

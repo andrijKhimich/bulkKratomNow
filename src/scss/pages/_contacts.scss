@@ -1,17 +1,4 @@
 .address {
-  padding-top: 230px;
-
-  @include d(1500) {
-    padding-top: 180px;
-  }
-
-  @include d(1199) {
-    padding-top: 120px;
-  }
-
-  @include d(991) {
-    padding-top: 40px;
-  }
 
   .leaf_7 {
     top: 200px;

@@ -98,7 +98,16 @@ h3 {
 
 h4 {
   font-size: 24px;
-  letter-spacing: 0.025em;
+  line-height: 1.08em;
+
+  @include d(1199) {
+    font-size: 20px;
+  }
+
+  @include d(767) {
+    font-size: 18px;
+  }
+
 }
 
 h5 {
@@ -597,6 +606,23 @@ textarea {
       }
     }
   }
+
+  &_grey {
+    font-weight: 300;
+    border-color: $borderColor;
+
+    @include rh(1024) {
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+      }
+    }
+
+    &.active {
+      border-color: $primary;
+      color: $primary;
+    }
+  }
 }
 
 .login-btn {
@@ -785,4 +811,25 @@ textarea {
   top: 330px;
   height: 420px;
   transform: translate(-50%, 0);
+}
+
+.inner-hero {
+  padding-top: 230px;
+
+  @include d(1500) {
+    padding-top: 180px;
+  }
+
+  @include d(1199) {
+    padding-top: 120px;
+  }
+
+  @include d(991) {
+    padding-top: 40px;
+  }
+}
+
+.read-more {
+  color: $primary;
+  text-decoration: underline;
 }

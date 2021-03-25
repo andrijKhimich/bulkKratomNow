@@ -57,7 +57,15 @@ function showContent() {
 }
 
 $(document).ready(function () {
-
+  //   setTimeout(masonryInit, 400);
+  // function masonryInit() {
+  //   $('.grid').masonry({
+  //     // options
+  //     itemSelector: '.grid-item',
+  //     columnWidth: '.grid-item',
+  //     horizontalOrder: true
+  //   });
+  // }
 
   if ($('.inner-page').length > 0) {
     console.log('inner');
