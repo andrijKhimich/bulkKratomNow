@@ -115,6 +115,13 @@ h4 {
 h5 {
   font-size: 20px;
   font-weight: 700;
+
+  @include d(1199) {
+    font-size: 18px;
+  }
+  @include d(767) {
+    font-size: 16px;
+  }
 }
 
 h6 {

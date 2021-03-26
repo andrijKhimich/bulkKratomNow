@@ -1,6 +1,10 @@
 .faq {
   .leaf {
     top: 400px;
+
+    @include d(1500) {
+      top: 150px;
+    }
   }
 }
 
@@ -21,8 +25,12 @@
 
     li {
 
+      @include d(1280) {
+        padding-left: 40px;
+      }
+
       &:not(:last-child) {
-        border-bottom: 1px solid $grey;
+        border-bottom: 1px solid $bgColor2;
       }
 
       .title-5,
@@ -33,6 +41,10 @@
         display: block;
         position: relative;
 
+        @include d(991) {
+          padding: 10px 10px 10px 0;
+        }
+
         &::before {
           content: "";
           width: 1px;
@@ -41,6 +53,16 @@
           top: 15px;
           left: -20px;
           background-color: $primary;
+
+          @include d(1280) {
+            left: -10px;
+          }
+
+          @include d(991) {
+            height: 20px;
+            top: 50%;
+            transform: translate(0, -50%);
+          }
         }
       }
     }
@@ -68,6 +90,10 @@
     background-color: transparent;
     transform: rotate(135deg);
     transition: transform $hover-duration $timing;
+
+    @include d(1280) {
+      left: -30px;
+    }
 
     &.active {
       transform: rotate(315deg);
