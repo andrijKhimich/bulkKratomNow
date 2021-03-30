@@ -119,6 +119,7 @@ h5 {
   @include d(1199) {
     font-size: 18px;
   }
+
   @include d(767) {
     font-size: 16px;
   }
@@ -270,7 +271,7 @@ input {
 
   &:focus {
     outline: none;
-    border-color: $black;
+    // border-color: $black;
   }
 
   &::-webkit-input-placeholder {
@@ -572,7 +573,9 @@ textarea {
 
   @include d(1199) {
     font-size: 16px;
-    padding: 10px 26px;
+    padding: 0 26px;
+    height: 50px;
+    line-height: 50px;
   }
 
   &_primary {
@@ -605,7 +608,7 @@ textarea {
     padding: 14px 23px;
 
     @include d(1199) {
-      padding: 10px 23px;
+      padding: 0 23px;
     }
 
     @include rh(1024) {
@@ -631,6 +634,41 @@ textarea {
       border-color: $primary;
       color: $primary;
     }
+  }
+
+  &_blue {
+    background-color: $blue;
+    color: $white;
+    font-weight: 400;
+    min-width: 240px;
+
+    @include rh(1024) {
+      &:hover {
+        background-color: transparent;
+        border-color: $blue;
+        color: $blue;
+      }
+    }
+
+    &.active {
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+
+  &_transparent {
+    background-color: transparent;
+    color: $blue;
+    font-weight: 400;
+
+    @include rh(1024) {
+      &:hover {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white;
+      }
+    }
+
   }
 }
 
@@ -789,6 +827,17 @@ textarea {
   white-space: nowrap;
   font-size: 12px;
   color: $bgColor2;
+
+  &_lg {
+    font-size: 16px;
+    color: $blue;
+
+    img {
+      flex: 0 0 25px;
+      max-width: 25px;
+      margin-right: 5px;
+    }
+  }
 
   img {
     flex: 0 0 20px;

@@ -1,0 +1,43 @@
+.about-company {
+  padding: 20px 0 60px 0;
+
+  .vawes,
+  .vawe-mask {
+    top: 100px;
+  }
+
+  &__img {
+    max-width: 640px;
+    margin: 0 auto;
+
+    @include d(767) {
+      max-width: calc(100% + 30px);
+      margin: 0 -15px 30px -15px;
+      max-height: 320px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 510px;
+    margin-left: auto;
+    margin-right: 0;
+
+    @include d(767) {
+      max-width: 100%;
+    }
+
+    .title-5,
+    & h5 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}
