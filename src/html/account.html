@@ -129,57 +129,60 @@
                         </span>
                         <h5 class="title-5">Add new address</h5>
                       </div>
-                      <div class="row">
-                        <div class="col-md-3">
-                          <div class="dashboard-form__box">
-                            <div class="dashboard-form__label">
-                              <p>Country</p>
-                              <b>United States (US)</b>
+                      <div class="dashboard-form__accordion">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <div class="dashboard-form__box">
+                              <div class="dashboard-form__label">
+                                <p>Country</p>
+                                <b>United States (US)</b>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                State
+                                <input type="text" class="dashboard-form__input" required placeholder="State">
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                Zip
+                                <input type="text" class="dashboard-form__input" required placeholder="0000">
+                              </label>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              State
-                              <input type="text" class="dashboard-form__input" required placeholder="State">
-                            </label>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                Town
+                                <input type="text" class="dashboard-form__input" required placeholder="Town">
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                Address
+                                <input type="text" class="dashboard-form__input" required placeholder="Address">
+                              </label>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-md-3">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              Zip
-                              <input type="text" class="dashboard-form__input" required placeholder="0000">
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              Town
-                              <input type="text" class="dashboard-form__input" required placeholder="Town">
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              Address
-                              <input type="text" class="dashboard-form__input" required placeholder="Address">
-                            </label>
+                        <div class="row">
+                          <div class="col">
+                            <div class="dashboard-form__btns">
+                              <button type="button" class="btn btn_blue">+ Add address</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col">
-                          <div class="dashboard-form__btns">
-                            <button type="button" class="btn btn_blue">+ Add address</button>
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
                     <div class="dashboard-form__content">
                       <h5 class="title-5">Payment method</h5>
@@ -230,66 +233,69 @@
                         </span>
                         <h5 class="title-5">Add card</h5>
                       </div>
-                      <div class="row">
-                        <div class="col">
-                          <div class="details-form__check">
-                            <label class="radio-label">
-                              <input type="radio" class="radio-input" name="card">
-                              <span class="radio-span"></span>
-                              <p>Card</p>
-                            </label>
-                            <label class="radio-label">
-                              <input type="radio" class="radio-input" name="card">
-                              <span class="radio-span"></span>
-                              <p>PayPal</p>
-                            </label>
-                            <label class="radio-label">
-                              <input type="radio" class="radio-input" name="card">
-                              <span class="radio-span"></span>
-                              <p>Checking</p>
-                            </label>
-                            <label class="radio-label">
-                              <input type="radio" class="radio-input" name="card">
-                              <span class="radio-span"></span>
-                              <p>Bitcoin</p>
-                            </label>
+                      <div class="dashboard-form__accordion">
+                        <div class="row">
+                          <div class="col">
+                            <div class="details-form__check">
+                              <label class="radio-label">
+                                <input type="radio" class="radio-input" name="card">
+                                <span class="radio-span"></span>
+                                <p>Card</p>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" class="radio-input" name="card">
+                                <span class="radio-span"></span>
+                                <p>PayPal</p>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" class="radio-input" name="card">
+                                <span class="radio-span"></span>
+                                <p>Checking</p>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" class="radio-input" name="card">
+                                <span class="radio-span"></span>
+                                <p>Bitcoin</p>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                Card Number
+                                <input type="text" class="dashboard-form__input" required
+                                  placeholder="0000 0000 0000 0000 ">
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                Data
+                                <input type="text" class="dashboard-form__input" required placeholder="00/00">
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="dashboard-form__box">
+                              <label class="dashboard-form__label">
+                                CCV
+                                <input type="text" class="dashboard-form__input" required placeholder="000">
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="dashboard-form__btns">
+                              <button type="button" class="btn btn_blue"> + Add card</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              Card Number
-                              <input type="text" class="dashboard-form__input" required
-                                placeholder="0000 0000 0000 0000 ">
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              Data
-                              <input type="text" class="dashboard-form__input" required placeholder="00/00">
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="dashboard-form__box">
-                            <label class="dashboard-form__label">
-                              CCV
-                              <input type="text" class="dashboard-form__input" required placeholder="000">
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <div class="dashboard-form__btns">
-                            <button type="button" class="btn btn_blue"> + Add card</button>
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
                   </form>
                 </div>

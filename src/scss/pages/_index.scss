@@ -725,6 +725,13 @@
   &__row {
     position: relative;
 
+    &:first-child {
+      @include d(991) {
+        margin-bottom: 60px;
+
+      }
+    }
+
     p {
       margin: 10px 0 20px 0;
     }
@@ -742,6 +749,18 @@
       width: 100%;
       opacity: .1;
       white-space: nowrap;
+
+      @include d(991) {
+        font-size: 50px;
+        top: -60px;
+        left: 0;
+        transform: translate(0, 0);
+      }
+
+      @include d(767) {
+        font-size: 30px;
+        top: -50px;
+      }
     }
   }
 

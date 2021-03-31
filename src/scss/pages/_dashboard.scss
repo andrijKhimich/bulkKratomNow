@@ -71,6 +71,65 @@
       position: relative;
       margin-bottom: 10px;
       padding-bottom: 15px;
+
+      .nice-select {
+        border: 1px solid $blue;
+        background-color: transparent;
+        height: 60px;
+        line-height: 60px;
+        padding-left: 38px;
+        padding-right: 50px;
+
+        &::after {
+          width: 10px;
+          height: 10px;
+
+        }
+
+        @include d(1199) {
+          height: 50px;
+          line-height: 50px;
+        }
+
+        &.open {
+          border-color: $primary;
+
+          &::after {
+            border-color: $primary;
+          }
+        }
+
+        .list {
+          border: none;
+          box-shadow: none;
+          width: 101%;
+          padding: 20px;
+        }
+
+        .option {
+          padding: 5px;
+          border-radius: 5px;
+          box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
+          width: 95%;
+          margin: 0 auto 10px auto;
+          font-size: 12px;
+          white-space: initial;
+          border: 1px solid transparent;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          line-height: 1.2em;
+
+          &:hover {
+            border: 1px solid $primary;
+            background-color: $white;
+          }
+
+          &:focus {
+            border: 1px solid $primary;
+          }
+        }
+      }
     }
 
 
