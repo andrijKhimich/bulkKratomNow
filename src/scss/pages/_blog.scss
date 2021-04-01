@@ -9,6 +9,8 @@
   &-card {
     max-width: 360px;
     margin-bottom: 40px;
+    border-radius: 10px;
+    transition: background-color $hover-duration $timing;
 
     @include d(1300) {
       max-width: 320px;
@@ -17,16 +19,19 @@
     }
 
     @include rh(1024) {
+
       &:hover {
-        .read-more {
+        background-color: $white;
+
+        .read-more__wrapper {
           opacity: 1;
           pointer-events: initial;
         }
-
-        .blog-card__img {
-          border-color: $primary;
-        }
       }
+    }
+
+    &__content {
+      padding: 10px;
     }
 
     &__img {
@@ -86,7 +91,7 @@
       }
     }
 
-    .read-more {
+    .read-more__wrapper {
       opacity: 0;
       pointer-events: none;
       transition: opacity $hover-duration $timing;
@@ -110,6 +115,7 @@
       margin-bottom: 100px;
       overflow-y: auto;
       padding-bottom: 10px;
+
       @include d(1199) {
         margin-bottom: 60px;
       }
@@ -237,18 +243,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 100px;
-
-    @include d(1199) {
-      margin-bottom: 60px;
-    }
 
     @include d(991) {
       padding-bottom: 30%;
     }
 
     @include d(767) {
-      margin-bottom: 40px;
       height: 280px;
     }
   }

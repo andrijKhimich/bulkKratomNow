@@ -887,7 +887,33 @@ textarea {
   }
 }
 
+.read-more__wrapper {
+  position: relative;
+  width: 100%;
+  opacity: 1;
+  text-align: center;
+
+  &:before,
+  &::after {
+    content: "";
+    width: 100px;
+    height: 5px;
+    background-color: $primary;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &::before {
+    left: -10px;
+  }
+
+  &:after {
+    right: -10px;
+  }
+}
+
 .read-more {
   color: $primary;
-  text-decoration: underline;
+  font-size: 20px;
 }
