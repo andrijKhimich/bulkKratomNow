@@ -24,10 +24,8 @@
 
     &.active {
       .logo {
-        // top: 5px;
         bottom: 10px;
         width: 105px;
-        // transform: translate(-50%, 0);
         background-color: transparent;
 
         &::before {
@@ -56,7 +54,6 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      // flex-wrap: wrap;
       padding-top: 15px;
       z-index: 3;
       height: 128px;
@@ -78,7 +75,6 @@
     margin-left: 179px;
     padding-left: 130px;
     position: relative;
-    border-left: 1px solid $greyLight;
 
     @include d(1199) {
       margin-left: 20px;
@@ -195,6 +191,7 @@
         padding: 7px 0;
         margin-bottom: 20px;
 
+
         &::after,
         &::before {
           content: "";
@@ -221,6 +218,10 @@
         span {
           white-space: nowrap;
         }
+      }
+
+      @include d(575) {
+        margin-bottom: 10px;
       }
 
       &::before {
@@ -289,6 +290,10 @@
       flex-direction: row;
       width: auto;
       margin-bottom: 20px;
+    }
+
+    @include d(575) {
+      margin-bottom: 10px;
     }
 
     &__item {
@@ -401,6 +406,57 @@
     @include d(1280) {
       max-width: 1140px;
     }
+  }
+
+  .search {
+    margin-right: 40px;
+    position: relative;
+    width: 44px;
+    height: 34px;
+
+    &-label {
+      width: 44px;
+      height: 32px;
+    }
+
+    &-input {
+      width: 44px;
+      height: 34px;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      padding-left: 0;
+      right: 0;
+      left: auto;
+      transition: width $hover-duration $timing;
+
+      &:focus {
+        width: 200px;
+        padding-left: 20px;
+        color: $textColor;
+      }
+
+      // &:focus~.search-btn {
+      //   pointer-events: visible;
+      //   z-index: 20;
+      // }
+    }
+
+    // &-btn {
+    //   width: 24px;
+    //   height: 24px;
+    //   padding: 10px;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   background-image: url(../img/search.svg);
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   transform: translate(-50%, -50%);
+    //   z-index: -1;
+    //   background-color: transparent;
+    //   border: none;
+    // }
   }
 }
 

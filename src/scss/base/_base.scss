@@ -917,3 +917,125 @@ textarea {
   color: $primary;
   font-size: 20px;
 }
+
+.search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @include d(991) {
+    position: relative;
+    width: 220px;
+    height: 50px;
+  }
+
+  @include d(575) {
+    height: 40px;
+  }
+
+  &-input {
+    width: 44px;
+    height: 60px;
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    background-color: $bgBody;
+    position: absolute;
+    top: 0;
+    padding-right: 40px;
+    left: 0;
+    transition: width $hover-duration $timing;
+
+    @include d(991) {
+      position: static;
+      border: 1px solid $blue;
+      border-radius: 5px;
+      width: 100%;
+      padding: 0 40px 0 20px;
+      height: 50px;
+      line-height: 50px;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    @include d(575) {
+      height: 40px;
+      line-height: 40px;
+    }
+
+    &::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $textColor;
+    }
+
+    &::-moz-placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $black;
+    }
+
+    &:-ms-input-placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $black;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $black;
+    }
+
+    &:focus {
+      width: 50vw;
+      padding-left: 20px;
+      color: $textColor;
+    }
+
+    &:focus~.search-label {
+      pointer-events: visible;
+      width: 50vw;
+
+      .search-btn {
+        pointer-events: visible;
+        z-index: 20;
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  &-label {
+    position: relative;
+    width: 44px;
+    height: 62px;
+    display: block;
+    pointer-events: none;
+
+    @include d(991) {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      height: 100%;
+    }
+  }
+
+  &-btn {
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url(../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    pointer-events: none;
+    transition: all $hover-duration $timing;
+  }
+}
