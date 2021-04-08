@@ -113,9 +113,9 @@
     display: flex;
     justify-content: space-between;
     margin: -15px 0;
+    flex-wrap: wrap;
 
     @include d(767) {
-      flex-wrap: wrap;
       margin: 0;
     }
   }
@@ -123,6 +123,10 @@
   &-col {
     padding: 0 15px;
     flex: 0 0 25%;
+
+    @include d(1440) {
+      flex: 0 0 240px;
+    }
 
     @include d(767) {
       flex: 0 0 50%;
@@ -139,7 +143,7 @@
   }
 
   &-box {
-    @include d(767) {
+    @include d(1440) {
       margin-bottom: 30px;
     }
 

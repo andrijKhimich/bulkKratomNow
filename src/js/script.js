@@ -214,6 +214,12 @@ $(document).ready(function () {
     }
   });
 
+  $(".collection-nav__link").click(function (e) {
+    e.preventDefault();
+    $(".collection-nav__link").removeClass("active").eq($(this).index()).addClass("active");
+    $(".collection__row").hide().eq($(this).index()).fadeIn()
+  }).eq(0).addClass("active");
+
   $(window).on('mousemove', function (e) {
 
     let w = $(window).width();
@@ -254,7 +260,7 @@ $('.sort-select').niceSelect();
 $('.card-select').niceSelect();
 
 $(window).scroll(function () {
-  
+
   const scrollValue = $(this).scrollTop();
   showOnScroll(scrollValue);
 
