@@ -76,9 +76,14 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0 -15px;
+
+  }
+
+  &__tab {
     display: none;
+
     &:first-of-type {
-      display: flex;
+      display: block;
     }
   }
 

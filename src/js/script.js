@@ -214,11 +214,17 @@ $(document).ready(function () {
     }
   });
 
-  $(".collection-nav__link").click(function (e) {
-    e.preventDefault();
-    $(".collection-nav__link").removeClass("active").eq($(this).index()).addClass("active");
-    $(".collection__row").hide().eq($(this).index()).fadeIn()
-  }).eq(0).addClass("active");
+  // Click function
+  $('.collection-nav__link').click(function () {
+    $('.collection-nav__link').removeClass('active');
+    $(this).addClass('active');
+    $('.collection__tab').hide();
+    const activeTab = $(this).attr('href');
+    // $(activeTab).css('display', 'flex');
+    $(activeTab).fadeIn();
+
+    return false;
+  });
 
   $(window).on('mousemove', function (e) {
 
