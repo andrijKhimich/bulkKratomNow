@@ -6,6 +6,8 @@ const logoImg = $(".logo img");
 const mainWrapper = $('.main-wrapper');
 const disclaimerBtn = $('.disclaimer-link');
 
+
+
 function setFixedHeader() {
   header.removeClass("header_home js-show-onload js-show js-slideDown");
 }
@@ -259,6 +261,24 @@ $(document).ready(function () {
 
   });
 
+
+  const countInput = $('.js-count-input');
+  let countInputVal = $('.js-count-input').val();
+  const btnPlus = $('.js-plus');
+  const btnMinus = $('.js-minus');
+
+  btnPlus.click(function () {
+    countInputVal++;
+    console.log(countInputVal);
+    countInput.val(countInputVal);
+  });
+
+  btnMinus.click(function () {
+    if (countInputVal > 0) {
+      countInputVal--;
+      countInput.val(countInputVal);
+    }
+  });
 
 });
 
