@@ -492,7 +492,7 @@
   color: $blue;
   margin: 50px 0 20px 0;
   align-items: center;
-
+  flex-wrap: wrap;
   @include d(1199) {
     margin: 20px 0;
     font-size: 14px;
@@ -523,10 +523,6 @@
 
 .details {
   padding: 88px 0;
-
-  @include d(1500) {
-    padding: 20px 0 20px 0;
-  }
 
   &__aside {
     min-height: 100%;
