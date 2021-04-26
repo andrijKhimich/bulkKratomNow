@@ -264,23 +264,20 @@
       padding-right: 0;
     }
 
-    figure {
-      margin: 60px auto;
+    p {
+      margin-bottom: 20px;
+    }
+
+    img,
+    picture {
+      height: auto;
+      object-fit: cover;
+      margin: 40px auto;
 
       @include d(767) {
         height: 280px;
-        margin: 0 -15px;
+        width: auto;
       }
-
-      img,
-      picture {
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    p {
-      margin-bottom: 20px;
     }
 
     h2,
