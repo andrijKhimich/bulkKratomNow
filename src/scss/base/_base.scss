@@ -1039,3 +1039,81 @@ textarea {
     transition: all $hover-duration $timing;
   }
 }
+
+.select2-container--default .select2-selection--single {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  margin-top: 16px;
+  padding: 20px 20px;
+  font-size: 16px;
+  border: 1px solid #85aec6;
+  border-radius: 5px;
+  -webkit-transition: -webkit-box-shadow .3s ease-out;
+  transition: -webkit-box-shadow .3s ease-out;
+  -o-transition: box-shadow .3s ease-out;
+  transition: box-shadow .3s ease-out;
+  transition: box-shadow .3s ease-out, -webkit-box-shadow .3s ease-out;
+  color: #464646;
+  background-color: transparent;
+  width: 100%;
+  -webkit-box-shadow: 0 0 0 1px transparent inset;
+  box-shadow: 0 0 0 1px transparent inset;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  top: 45px;
+  right: 20px;
+}
+
+.woocommerce form .form-row .input-checkbox {
+  width: 20px;
+}
+
+.input-checkbox {
+  position: absolute;
+  width: 20px;
+  right: 0;
+  margin-left: 20px;
+  top: 2px;
+}
+
+.shop_table.woocommerce-checkout-review-order-table {
+  border: none;
+
+  th {
+    padding: 10px 0;
+  }
+}
+
+.wc-echeck-form .wc-payment-form {
+  .nice-select {
+    margin-top: 16px;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    border: 1px solid #85aec6;
+    border-radius: 5px;
+    -webkit-transition: -webkit-box-shadow .3s ease-out;
+    transition: -webkit-box-shadow .3s ease-out;
+    -o-transition: box-shadow .3s ease-out;
+    transition: box-shadow .3s ease-out;
+    transition: box-shadow .3s ease-out, -webkit-box-shadow .3s ease-out;
+    color: #464646;
+    background-color: transparent;
+    width: 100%;
+    -webkit-box-shadow: 0 0 0 1px transparent inset;
+    box-shadow: 0 0 0 1px transparent inset;
+  }
+}
+
+.wc-echeck-form .wc-payment-form {
+  .dashboard-form__label {
+    display: block;
+    margin-top: 16px;
+  }
+}
