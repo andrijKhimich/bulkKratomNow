@@ -188,7 +188,7 @@ $(document).ready(function () {
     $('body').addClass('fixed');
   });
 
-  $('.overlay').click(function () {
+  $('.overlay, .js-return').click(function () {
     $('.overlay').removeClass('active');
     $('.modal').removeClass('active');
     $('body').removeClass('fixed');

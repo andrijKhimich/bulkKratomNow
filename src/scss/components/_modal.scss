@@ -10,6 +10,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity $hover-duration $timing;
+  z-index: 9998;
 
   &.active {
     pointer-events: initial;
@@ -33,7 +34,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity $hover-duration $timing, right $hover-duration $timing;
-  
+
   &.active {
     right: 0;
     pointer-events: initial;

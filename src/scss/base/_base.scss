@@ -1071,11 +1071,13 @@ textarea {
 
 .woocommerce form .form-row .input-checkbox {
   width: 20px;
+  flex: 0 0 20px;
 }
 
 .input-checkbox {
   position: absolute;
   width: 20px;
+  flex: 0 0 20px;
   right: 0;
   margin-left: 20px;
   top: 2px;
