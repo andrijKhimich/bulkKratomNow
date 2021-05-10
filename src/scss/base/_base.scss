@@ -1125,5 +1125,13 @@ textarea {
   height: 50px !important;
   background-color: transparent !important;
   color: $black !important;
-  
+
+}
+
+.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
+  display: inline-flex;
+  line-height: 1em;
+  span {
+    white-space: nowrap;
+  }
 }
