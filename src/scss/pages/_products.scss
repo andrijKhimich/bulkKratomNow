@@ -1027,3 +1027,7 @@
 .rating-star__input:checked~.rating-star__label {
   color: $yellow;
 }
+
+.woocommerce .quantity .qty {
+  width: 100%;
+}
