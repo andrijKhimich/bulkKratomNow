@@ -145,9 +145,7 @@
   &-box {
     position: relative;
     z-index: 1;
-    @include d(1440) {
-      margin-bottom: 30px;
-    }
+    margin-bottom: 30px;
 
     @include d(575) {
       margin-bottom: 0;

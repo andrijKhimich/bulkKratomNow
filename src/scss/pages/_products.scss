@@ -526,6 +526,10 @@
 }
 
 .details {
+  &-form {
+    margin-right: 60px;
+  }
+
   padding: 88px 0;
 
   &__aside {
@@ -689,11 +693,9 @@
 
   &__row {
     display: flex;
-    margin-bottom: 80px;
-
-    @include d(991) {
-      margin-bottom: 40px;
-    }
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 
     @include d(575) {
       flex-wrap: wrap;
@@ -701,6 +703,7 @@
 
     .btn {
       width: 270px;
+
     }
   }
 
@@ -739,6 +742,21 @@
 .form__count-input {
   background-color: transparent;
   text-align: center;
+}
+
+.buy-text__hidden {
+  opacity: 0;
+  transition: opacity $hover-duration $timing;
+
+  span {
+    display: inline-block;
+    width: 5px;
+    margin-right: 20px;
+    height: 10px;
+    border-right: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    transform: rotate(45deg);
+  }
 }
 
 .radio {
@@ -805,6 +823,7 @@
 .details-marks {
   display: flex;
   margin-bottom: 40px;
+  margin-top: 80px;
 
   @include d(767) {
     margin-bottom: 20px;
@@ -927,6 +946,7 @@
   &__reviews {
     margin-bottom: 30px;
     font-size: 14px;
+
     .btn {
       margin-top: 30px;
     }

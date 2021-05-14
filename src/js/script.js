@@ -61,6 +61,9 @@ function showContent() {
 $(document).ready(function () {
   showContent();
 
+  $('.js-buy').click(function () {
+    $('.buy-text__hidden').css('opacity', '1');
+  });
   humburger.click(function () {
     if ($(this).hasClass('active')) {
       closeMenu();
@@ -284,6 +287,8 @@ $(document).ready(function () {
 
 $('.sort-select').niceSelect();
 $('.card-select').niceSelect();
+$('.custom-select').niceSelect();
+
 
 $(window).scroll(function () {
 
