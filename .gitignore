@@ -1,5 +1,5 @@
 /node_modules
-/dist
+# /dist
 /psd
 /src/libs
 package-lock.json

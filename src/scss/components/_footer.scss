@@ -92,13 +92,13 @@
   }
 
   &-list {
-    &__item {
+    &__item, li {
       &:not(:last-child) {
         margin-bottom: 10px;
       }
     }
 
-    &__link {
+    &__link, a {
       transition: color $hover-duration $timing;
 
       @include rh(1024) {

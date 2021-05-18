@@ -558,7 +558,7 @@ textarea {
   }
 }
 
-.btn {
+.btn, .button {
   display: inline-block;
   border: none;
   background-color: transparent;
@@ -579,7 +579,7 @@ textarea {
     line-height: 50px;
   }
 
-  &_primary {
+  &_primary, .button {
     background-color: $primary;
     color: $white;
 
